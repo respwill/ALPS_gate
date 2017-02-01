@@ -7,7 +7,7 @@ from HI_tool.schedule_check import sch_check
 
 
 # create sch_check class instance.
-EL = sch_check("ALPS(603) Package CES v1.0.xlsm", "Turnkey schedule", "Lot#/DCC", "Tdevice", current_fg_column="FG/PV",)
+EL = sch_check("ALPS(603) Package CES v1.0.xlsm", "Turnkey schedule", "Lot#/DCC", device_column= "Tdevice", current_fg_column="FG/PV",)
 
 # collecting target lot number using 'set_target()' method in WF instance.
 EL.set_target(603, "P/D/L", "EOH(D)")
