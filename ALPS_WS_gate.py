@@ -7,12 +7,12 @@ from HI_tool.schedule_check import sch_check
 
 
 # create sch_check class instance.
-WF = sch_check("ALPS(603) Wafer CES v1.0.xlsm", "Probe schedule", "Bank Lot#(Job#)", "dcc", "Test device","PO#",  ship_column="Ship To", current_fg_column="FG",)
+WF = sch_check("ALPS(603) Wafer CES v1.0.xlsm", "Probe schedule", "Bank Lot#(Job#)", "dcc", "Test device","PO#",  ship_column="Ship Dest", current_fg_column="FG", probeFlag_column="Probe Flag")
 
 # collecting target lot number using 'set_target()' method in WF instance.
 WF.set_target(603, "wafer", "Wfr")
 WF.parser(WF.target_lots, WF.EMES_df, WF.result_df)
-WF.get_info(["test_device", 'test_po', 'ship_code', 'current_fg', ])
+WF.get_info(["test_device", 'test_po', 'ship_code', 'current_fg', 'probe_flag' ])
 WF.comparing("Wafer")
 print("Inspection complete")
 
